@@ -1,0 +1,5654 @@
+Report: grammarly_764230
+
+grammarly_764230
+by Vbn
+
+General metrics
+51,535
+
+7,476
+
+365
+
+29 min 54 sec 57 min 30 sec
+
+characters
+
+words
+
+sentences
+
+reading
+
+speaking
+
+time
+
+time
+
+Score
+82
+
+Writing Issues
+
+271
+
+123
+
+148
+
+Issues left
+
+Critical
+
+Advanced
+
+This text scores better than 82%
+of all texts checked by Grammarly
+
+Plagiarism
+This text hasn’t been checked for plagiarism
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 1 of 60
+
+Report: grammarly_764230
+
+Writing Issues
+137
+
+Correctness
+
+3
+
+Text inconsistencies
+
+9
+
+Comma misuse within clauses
+
+29
+
+Incorrect punctuation
+
+50
+
+Ungrammatical sentence
+
+16
+
+Determiner use (a/an/the/this, etc.)
+
+1
+
+Pronoun use
+
+7
+
+Confused words
+
+2
+
+Wrong or missing prepositions
+
+14
+
+Improper formatting
+
+4
+
+Incorrect phrasing
+
+2
+
+Incorrect noun number
+
+12
+
+Engagement
+
+12
+
+Word choice
+
+118
+
+Clarity
+
+108
+
+Paragraph can be improved
+
+3
+
+Hard-to-read text
+
+1
+
+Passive voice misuse
+
+4
+
+Intricate text
+
+2
+
+Wordy sentences
+
+4
+
+Delivery
+
+2
+
+Inappropriate colloquialisms
+
+2
+
+Tone suggestions
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 2 of 60
+
+Report: grammarly_764230
+
+Unique Words
+
+18%
+
+Measures vocabulary diversity by calculating the
+
+unique words
+
+percentage of words used only once in your
+document
+
+Rare Words
+
+49%
+
+Measures depth of vocabulary by identifying words
+
+rare words
+
+that are not among the 5,000 most common English
+words.
+
+Word Length
+
+5.6
+
+Measures average word length
+
+characters per word
+
+Sentence Length
+
+20.5
+
+Measures average sentence length
+
+words per sentence
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 3 of 60
+
+Report: grammarly_764230
+
+grammarly_764230
+HashLearner: A Secure Decentralized Learning Framework Based on Hash
+Graph
+Federated learning enables collaborative model training without centralized
+data collection, but existing frameworks rely on a central server, introducing
+risks of single points of failure, adversarial manipulation, and privacy leakage.
+1
+
+To address these challenges, we propose HashLearner, a secure decentralized
+learning framework that utilizes the HashGraph consensus protocol for model
+1
+
+aggregation without trusted authorities. HashLearner introduces two key
+innovations: (i) a consensus-driven decentralized aggregation mechanism
+resilient to Byzantine adversaries, and (ii) a privacy-preserving shuffling
+1
+
+strategy that mitigates gradient reconstruction and poisoning attacks. To
+handle heterogeneous data distributions, the framework further employs
+1
+
+transfer learning–based personalization. The simulation results of
+HashLearner, tested on benchmark Kaggle datasets, demonstrate that the
+platform maintains high accuracy while significantly enhancing scalability,
+2
+
+3
+
+1
+
+security and privacy. These findings demonstrate that HashLearner provides a
+practical path toward scalable, privacy-preserving, and trustworthy
+decentralized federated learning.
+
+Introduction
+The deep learning community increasingly seeks decentralized solutions that
+4
+
+4
+
+allow organizations to jointly train models and carry out computations while
+1
+
+operating in untrusted environments. Some approaches to solve this problem
+5
+
+have been proposed in recent years including Federated Learning (FL)
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 4 of 60
+
+Report: grammarly_764230
+
+\cite{refre01}, \cite{refre02}, \cite{refre05} \cite{refre0019} and Gossip
+Learning (GL) \cite{refre03}, \cite{refre09}, \cite{refre11}.
+6
+
+The increasing demand for privacy-preserving machine learning has advanced
+6
+
+the rise of FL, where multiple organizations collaboratively train a shared
+1
+
+model without exchanging raw data. By keeping sensitive datasets local, FL
+mitigates risks associated with centralized data collection, such as
+1
+
+unauthorized access, privacy breaches, and regulatory non-compliance. They
+try to distribute the training phase through a decentralized network of nodes
+7,8
+
+7,8
+
+which is multi-organizational which means each node can have a different
+owner than other nodes.
+In recent years, FL has emerged as a promising paradigm for collaborative
+machine learning, enabling multiple participants to train a shared model
+1
+
+without exposing their private data. By decentralizing the training process, FL
+9
+
+addresses critical privacy concerns and reduces the risks associated with data
+1
+
+centralization. Despite these advantages, most FL frameworks rely on a central
+1
+
+aggregation server to coordinate training. This dependence introduces critical
+limitations:
+Single point of failure: If the server is compromised or fails, the system
+collapses.
+Adversarial vulnerability: Malicious participants can launch poisoning or
+reconstruction attacks, such as those using generative adversarial networks
+(GANs).
+Privacy risks: The server may infer sensitive information from model updates.
+Scalability challenges: Centralized coordination struggles to handle large
+numbers of clients in real-world distributed networks.
+While alternatives such as gossip learning and blockchain-based FL have been
+proposed, gossip learning suffers from slow convergence and inconsistency
+10
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 5 of 60
+
+Report: grammarly_764230
+10
+
+under heterogeneous data, whereas blockchain-based solutions face
+scalability bottlenecks due to latency and resource-intensive consensus
+mechanisms.
+This paper proposes a Secure Decentralized Learning Framework Based on
+HashGraph called HashLearner, which eliminates the dependency on a central
+11
+
+11
+
+server and leverages the unique properties of HashGraph, a distributed ledger
+technology known for its high throughput, fairness, and Byzantine fault
+1
+
+tolerance. By integrating HashGraph into the FL process, the proposed
+framework ensures secure and efficient coordination among participants, even
+1
+
+in the presence of adversarial actors. The decentralized nature of HashGraph
+12
+
+12
+
+not only enhances the resilience of the system but also mitigates the risks
+associated with centralized control, such as data manipulation and
+1
+
+unauthorized access. A key contribution of this work is the framework's ability
+to counteract GAN attacks, which have become a significant threat in FL
+1
+
+environments. GAN attacks exploit the collaborative nature of FL to generate
+malicious updates that can compromise the integrity of the global model.
+The proposed framework incorporates advanced probabilistic consensus
+mechanisms to detect and neutralize such attacks, ensuring the reliability and
+1
+
+trustworthiness of the learning process. The proposed framework offers several
+advantages over traditional FL systems, including improved scalability,
+1
+
+enhanced security, and greater resistance to adversarial interference. By
+removing the central server and leveraging HashGraph's decentralized
+13
+
+13
+
+architecture, the proposed approach paves the way for more secure and
+1
+
+privacy-preserving machine learning in distributed environments. This paper
+14
+
+explores the design, implementation and evaluation of the framework,
+demonstrating its effectiveness in mitigating GAN attacks and its potential to
+revolutionize the field of FL.
+15
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+15
+
+Page 6 of 60
+
+Report: grammarly_764230
+15
+
+15
+
+The rest of the paper is structured as follows: In Section 2, related work in this
+15
+
+1
+
+area is reviewed. Section 3 introduces some preliminary topics necessary for
+16
+
+understanding our approach and the proposed HashLearner platform is
+1
+
+explained in detail. Section 4 focuses on security and performance analysis of
+1
+
+the proposed scheme. Finally, Section 5 discusses the conclusions drawn from
+this research.
+
+Related Works
+17
+
+Two prominent approaches in Decentralized learning domain are Gossip
+Learning and Federated Learning, each offering unique advantages and
+1
+
+challenges in decentralized settings. Gossip Learning \cite{refre09} is a fully
+decentralized approach where participants (nodes) exchange model updates
+1
+
+directly with their neighbors in a peer-to-peer manner. This method eliminates
+the need for a central coordinator, making it highly scalable and resilient to
+1
+
+single points of failure. Gossip protocols rely on randomized communication to
+propagate updates across the network, ensuring that knowledge is
+1
+
+disseminated efficiently. Gossip learning faces two major challenges: (i) poor
+performance on heterogeneous datasets, where local data distributions vary
+significantly across nodes, and (ii) slower convergence compared to centralized
+1
+
+or semi-decentralized FL approaches. In gossip learning, each node trains its
+18,19
+
+18
+
+19
+
+local model using its local dataset the same as FL but the point is that there is
+18,19
+
+19
+
+no global initial model and each node initializes the global model's initial
+1
+
+weights independently. After training local models, each node tries to exchange
+20
+
+its model's weights with some other nodes in multiple rounds and at each
+20
+
+1
+
+21
+
+round it merges its model with the other node's model. After some rounds step
+21
+
+22
+
+21,22
+
+by step the models can be converged more to some same distribution across
+1,23
+
+multiple nodes. Hence GL might not be a good target in heterogeneous
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 7 of 60
+
+Report: grammarly_764230
+
+networks with varying computational resources and communication delays
+24
+
+because of the lack of a structured coordination mechanism and
+inconsistencies in model convergence \cite{refre11}. \\
+On the other hand, FL has emerged as a widely adopted framework for
+decentralized learning, particularly in scenarios where data privacy is
+1
+
+25
+
+26
+
+25,26
+
+26
+
+paramount. In FL the target is to train a high quality centralized shared model,
+25,26
+
+25
+
+25,26
+
+while training data is disbursed in a large number of each customer with an
+25,26
+
+25,26
+
+untrustable and relatively slow network connection under the coordination of a
+1
+
+central server. The server aggregates local model updates from participants
+and distributes the global model back to them. \\
+While FL has demonstrated success in applications such as mobile devices and
+1
+
+healthcare, its reliance on a central server introduces several limitations. These
+include vulnerability to single points of failure, potential privacy breaches, and
+27
+
+susceptibility to poisoning and adversarial attacks, such as reconstruction
+1
+
+28
+
+1
+
+attack. Poisoning attacks can be used for two different targets. One of them is
+30
+
+30
+
+to corrupt the model by inserting wrong and corrupted data with a wrong data
+29
+
+29
+
+29,30
+
+30
+
+distribution into the dataset which is called passive attack and the other one is
+29,30
+
+for hiding a backdoor inside the trained model by employing specific labels or
+29
+
+29
+
+1
+
+data features in the dataset which is called active attack. In the reconstruction
+32
+
+attack, the adversary tries to reconstruct a shadow model based on the target
+32
+
+32
+
+model weights or gradients to find out some info about the data in the dataset
+32
+
+31
+
+32
+
+32
+
+in different ways such as dataset distribution, existence of specific data pieces
+32
+
+32
+
+32
+
+1
+
+33
+
+in the dataset, or some properties of the dataset. As an example, the adversary
+33
+
+33
+
+33
+
+33
+
+can gain the ability to learn if an image is in the dataset, or know the number of
+33
+
+1
+
+people with some specific properties in the dataset. Reconstruction attacks
+can be implemented by employing GANs.
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 8 of 60
+
+Report: grammarly_764230
+
+In GAN attacks, malicious participants generate fake updates to manipulate
+1
+
+the global model, compromising its integrity and performance. A GAN
+comprises a generator and a discriminator trained in adversarial competition:
+the generator produces synthetic samples, while the discriminator attempts to
+1
+
+distinguish them from real data. This dynamic enables adversaries in FL to craft
+1
+
+poisoned updates or reconstruct private data. On the other hand, the
+34
+
+34
+
+1
+
+discriminator tries to find out the fake samples produced by the generator. The
+36
+
+competition between these two parts leads to learning more features and
+36
+
+35
+
+advancement of the generator to produce fake samples which are so similar to
+1
+
+real samples. In the reconstruction attack, the adversary can use GANs to
+39
+
+37
+
+39
+
+38
+
+produce a shadow model and find some info about the dataset of a node as
+1
+
+41
+
+mentioned before. Multiple approaches as counter-attacks had been proposed
+40
+
+41
+
+40
+
+against these attacks such as Encryption, Shuffling, Differential Privacy and in
+41
+
+40
+
+40
+
+41
+
+some ways inserting noise into dataset which were helpful to make the system
+40,41
+
+more safe against some of the mentioned attacks \cite{refre05}.
+42
+
+To address these challenges, recent research has explored the integration of
+42
+
+blockchain technology into FL, aiming to decentralize the aggregation process
+1
+
+and enhance security. Blockchain-based FL systems replace the central server
+with a distributed ledger, enabling transparent and tamper-proof record1
+
+keeping of model updates. However, traditional blockchain systems often
+suffer from scalability issues, high latency, and energy inefficiency, which
+1
+
+hinder their applicability in large-scale FL scenarios. In this context,
+43
+
+HashGraph emerges as a promising alternative to blockchain for decentralized
+1
+
+learning \cite{refre14}. HashGraph \cite{refre17} is a distributed ledger
+44
+
+44
+
+technology that utilizes a gossip-about-gossip protocol and virtual voting to
+1
+
+43
+
+achieve consensus in a highly efficient and secure manner. Unlike blockchain,
+HashGraph does not rely on resource-intensive proof-of-work mechanisms,
+1
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 9 of 60
+
+Report: grammarly_764230
+1
+
+making it more scalable and energy-efficient. Its inherent properties, such as
+Byzantine fault tolerance, fairness, and asynchronous communication, make it
+suitable for decentralized learning frameworks.
+HashGraph offers higher throughput than proof-of-stake blockchains and is
+45
+
+4
+
+therefore suitable for AI training networks in which multiple models are trained
+1
+
+simultaneously. Moreover, it provides asynchronous Byzantine fault tolerance,
+which the HashGraph designers describe as the strongest attainable level of
+1
+
+security in asynchronous consensus. Generally this framework which uses
+HashGraph, is the best for implementing an AI training platform between
+different organizations whose goal is to train AI models or expand existing AI
+models everyday rapidly which needs high throughput, because they may want
+to transfer many models at the same time in each training round, and
+46
+
+HashGraph's higher throughput helps to increase aggregation and final model
+production speed efficiently.
+47
+
+HashGraph is a decentralized network architecture consisting of nodes each
+48
+
+47
+
+48
+
+1
+
+holding a copy of the HashGraph data including its events graph. HashGraph
+50
+
+49
+
+50
+
+50
+
+can be used to store data in a secure and decentralized manner in which it is
+49
+
+hard for attackers to corrupt its stability and consistency including the order of
+50
+
+events in the HashGraph.
+51
+
+51
+
+This research tries to improve decentralized learning approaches to aggregate
+51
+
+1
+
+a global model in a decentralized manner. As an example in the FedHealth
+paper \cite{refre03}, the proposed approach needs a central server to
+1
+
+52
+
+aggregate the global model at the end of the training phase. As shown in figure
+\ref{fig1:sample}, FedHealth proposed a federated learning framework
+1
+
+improved by transfer learning. It is optimized for healthcare field model training
+1
+
+54
+
+53
+
+and deep learning approaches. They employed the transfer learning to adapt
+54
+
+the global aggregated model to each node's local dataset data distribution by
+54
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 10 of 60
+
+Report: grammarly_764230
+54
+
+training the global aggregated model on the local datasets separately on each
+node \cite{refre03}.
+Related work includes blockchain-based federated learning (BCFL)
+\cite{refre13}, which explores similar decentralization concepts.
+In federated learning frameworks, the aggregator plays a crucial role by
+55
+
+55
+
+collecting and combining training results from local sources to update the
+1
+
+global model. However, this central aggregator poses reliability, security, and
+1
+
+availability risks. A compromised aggregator can jeopardize the entire
+federated learning system, making it vulnerable to adversarial attacks.
+1
+
+Potential threats include:
+Malicious aggregation behavior
+Network connectivity disruptions and denial-of-service attacks
+External security breaches and exploits \cite{refre13}\\.
+56
+
+To address these primary challenges and other related issues, they
+56
+
+implemented blockchain technology to finalize and share models through an
+immutable distributed ledger similar to HashLearner's approach using
+1
+
+43
+
+HashGraph. However, HashGraph achieves higher throughput than blockchain
+due to its asynchronous consensus architecture.
+Another blockchain-based FL framework \cite{refre14} secures IoT devices by
+utilizing them as blockchain nodes and employing a blockchain consensus
+1
+
+mechanism for model sharing. While conceptually similar to previous work,
+HashLearner demonstrates superior speed owing to its consensus mechanism.
+As noted previously, federated learning architectures are inherently vulnerable
+to both distributed denial-of-service (DDoS) attacks and privacy violations,
+1
+
+including model data leakage. These vulnerabilities arise from malicious
+activities such as attempts to alter or steal confidential client data through
+1
+
+manipulated model updates and weights. Furthermore, centralized FL systems
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 11 of 60
+
+Report: grammarly_764230
+
+face scalability challenges, particularly when handling the increasing volume of
+updates from growing IoT networks, which demand substantial computational
+resources \cite{refre15}, \cite{refre16}\\.
+Blockchain technology, as a decentralized and immutable ledger system, offers
+several advantages, including decentralization, tamper resistance, and
+enhanced security. These properties effectively address the limitations of
+centralized FL systems that rely on a single server under a central authority. By
+eliminating dependence on a central server, the blockchain mitigates single
+points of failure and associated security risks.
+57
+
+57,58
+
+The FeDis framework, representing an approach that integrates federated
+learning with a distributed ledger to address security and trust concerns in
+1
+
+59
+
+collaborative machine learning. The core of the framework utilizes federated
+learning to train a global model by iteratively aggregating local gradient models
+59
+
+1
+
+contributed by various participants. A notable feature of FeDis is its ability to
+handle heterogeneous data and devices, a common challenge in real-world
+1
+
+federated systems. FeDis enhances security and trust through the strategic use
+60
+
+1
+
+of a distributed ledger. Participants' local model weights are encrypted before
+1
+
+61
+
+being saved to the ledger. This encrypted data is then fetched by the server for
+1
+
+aggregation to form the global model. This process adds a layer of traceability
+62
+
+and security, which is intended to increase user trust in the system
+62
+
+\cite{refre19}\\.
+63
+
+DFL is blockchain architecture designed to improve the efficiency of federated
+1
+
+learning (FL). Instead of serving as a traditional distributed ledger, this
+43
+
+blockchain functions as a distributed proof of contribution to the machine
+1
+
+64
+
+learning (ML) model. A key innovation is the asynchronous block generation
+64
+
+64
+
+1
+
+capability, allowing each node to create its own blocks independently. This
+1
+
+approach significantly enhances the overall FL efficiency. The architecture's
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 12 of 60
+
+Report: grammarly_764230
+
+stability and robustness are also addressed through a node reputation strategy
+1
+
+and a weighted FedAvg implementation. These features are particularly
+1
+
+effective in mitigating the challenges of non-I.I.D. (non-independent and
+identically distributed) datasets and defending against model poisoning
+1
+
+attacks. From an ML perspective, the primary contribution is an asynchronous,
+43
+
+Gossip-based ML training method that uses the blockchain specifically for
+65
+
+storing a verifiable proof of each node's contribution to the model
+\cite{refre20}.
+Another study introduces a secure Federated Learning (FL) algorithm called
+1
+
+MPCFL. MPCFL is built on the principles of secure multi-party computation
+1
+
+(MPC) and secret sharing. The algorithm uses the Sharemind MPC framework to
+66
+
+1
+
+securely combine local model updates into a global model. MPCFL is designed
+to address common FL security issues, such as inference attacks, gradient
+leakage attacks, model poisoning, and model inversion \cite{refre21}.
+43
+
+The integration of blockchain and FL enables the development of decentralized
+67
+
+architectures with fortified security, improved privacy preservation, and
+67
+
+67
+
+improved reliability that is particularly valuable in untrusted environments
+such as IoT networks that may contain adversarial nodes \cite{refre14}.
+1
+
+HashGraph delivers these same benefits while offering faster finalization and
+greater throughput.
+The Swirlds HashGraph consensus mechanism provides a solution for
+replicated state machines, specifically designed to ensure Byzantine fault
+1
+
+tolerance. Its fairness characteristic is particularly notable, as adversaries find
+it extremely difficult to manipulate transaction ordering during the consensus
+1
+
+process. The system operates asynchronously without leaders, round-robin
+structures, or proof-of-work mechanisms, achieving eventual consensus with
+probability one while maintaining high performance in fault-free conditions.
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 13 of 60
+
+Report: grammarly_764230
+
+At its core, the system utilizes a gossip protocol where participants do more
+68
+
+than simply broadcast transactions - they also share information about the
+1
+
+gossiping process itself. Through this process, participants collectively
+1
+
+construct a HashGraph that records all gossip exchanges. This structure
+enables Byzantine agreement through a "virtual voting" mechanism within the
+HashGraph consensus.
+1
+
+In this system, Alice doesn't directly send votes to Bob. Instead, Bob
+69
+
+determines Alice's hypothetical vote based on his knowledge of what Alice
+1
+
+knows, gathered during the gossip process. This innovative approach achieves
+fair Byzantine agreement on a comprehensive transaction order while
+maintaining minimal communication overhead beyond the transactions
+1
+
+themselves. Operating asynchronously, HashGraph establishes consensus
+1
+
+without predefined paths. Its probabilistic nature virtually guarantees that
+Byzantine agreement will always be reached \cite{refre17}.
+70
+
+Figure 2 illustrates a HashGraph consensus sample involving five nodes, along
+70
+
+with the finalization of its events (blocks), while Figure 3 outlines the key
+1
+
+components of the algorithms. The gossip history is visualized as a directed
+71
+
+graph, where the progression of the gossip protocol depends on a graph-based
+71
+
+1
+
+representation. In this representation, each participant is mapped to a distinct
+1
+
+vertical column of vertices (nodes). For example, if node Alice receives gossip
+from node Bob including all of Bob's knowledge, this exchange is modeled and
+1
+
+stored as a vertex in Alice's column. This vertex then generates two downwardpointing edges, connecting it to the most recent prior gossip instances from
+both Alice and Bob.\\
+HashLearner employs HashGraph as its consensus mechanism, eliminating the
+1
+
+need for a central server (or cloud) in the federated learning process. A central
+72
+
+server could act as an adversary or attacker, introducing vulnerabilities such as
+1
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 14 of 60
+
+Report: grammarly_764230
+1
+
+backdoor planting (poisoning) or corrupting model performance. To mitigate
+this, HashLearner introduces a validation step during aggregation, performed
+43
+
+by multiple replicated multi-organizational nodes—similar to blockchain
+73
+
+through a voting mechanism.
+74
+
+The system is fault-tolerant, which means that it can withstand adversarial
+behavior as long as no more than half (50%) of the randomly chosen validators
+1
+
+are malicious in any given aggregation step. If more than half of the validators
+are adversaries, the voting process fails.
+75
+
+To improve aggregation performance especially for resource-constrained IoT
+1,76
+
+nodes with limited computation power, we introduced a sharding step. This
+reduces the need for each node to aggregate large numbers of models
+simultaneously, enhancing efficiency and benefiting low-memory nodes in the
+1
+
+federated network. The primary weakness is that the system can fail if at least
+1
+
+33\% of the nodes are adversarial. Although the aggregation process itself
+tolerates up to 50\% malicious voters, the underlying HashGraph consensus is
+aBFT (asynchronous Byzantine Fault Tolerant) and can only resist up to 33\%
+1
+
+77
+
+77
+
+adversarial nodes. However, due to the asynchronous nature of HashGraph,
+controlling virtual voting or executing cheating attacks is inherently difficult.
+The key strength of this approach is its ability to remove reliance on an
+untrusted central server, enabling a masterless mesh of servers owned by
+different organizations to collaboratively train AI models without oversight from
+78 1
+
+a central authority. A similar approach is now being adopted in AI training
+processes implemented on blockchains.
+79
+
+As mentioned in \cite{refre03} and \cite{refre0018}, FL is the technique to
+79
+
+79
+
+1
+
+overcome the data isolation issue. In this way, it is possible to build models
+1
+
+using the data contributed by users across the network. Yet another key factor
+1
+
+is the personalization of all the applied solutions. Even if we can directly use
+80
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+1
+
+Page 15 of 60
+
+Report: grammarly_764230
+80
+
+1
+
+the cloud model, it might not perform well on a particular user. The reason for
+81
+
+81
+
+this is the dissimilarity in the data distribution of the user and the server's
+1
+
+83
+
+82
+
+storage. The common model is trained on the server that only recognizes the
+83
+
+83
+
+83
+
+1
+
+distribution of the features from all the users. Hence, it performs badly in
+84
+
+recognizing the details of specific users \cite{refre03}.
+Transfer learning has been successfully applied in frameworks such as
+FedHealth, where trained models are adapted to local datasets to improve
+1
+
+personalization and efficiency. HashLearner builds on this idea by using the
+85
+
+same dataset and CNN model, but eliminates the reliance on a central server.
+1
+
+Alternative decentralized approaches have also been explored, most notably
+1
+
+gossip learning. In gossip learning, nodes exchange model updates randomly
+with peers, enabling fully decentralized training without central coordination.
+1
+
+While this design offers scalability and robustness, it suffers from slow
+convergence and the absence of a unique global model—each node retains its
+1
+
+own final model, which only converges in distribution. Moreover, gossip
+learning cycles are asynchronous, and node selection relies on a sampling
+1
+
+service \cite{refre04, refre09, refre10}. HashLearner addresses these
+limitations by introducing a decentralized aggregation mechanism that
+86
+
+86
+
+preserves scalability and robustness while ensuring faster convergence and a
+86
+
+shared global model without requiring a central server.
+87
+
+In this paper we build on these advancements by proposing a Secure
+87,88
+
+Decentralized Learning Framework Based on HashGraph which is called
+88
+
+HashLearner, which eliminates the central server in federated learning and
+1
+
+leverages HashGraph's consensus mechanism to coordinate model updates. By
+doing so, our framework addresses the limitations of traditional FL systems,
+such as vulnerability to GAN attacks and single points of failure, while
+1
+
+maintaining the privacy and scalability benefits of decentralized learning. The
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 16 of 60
+
+Report: grammarly_764230
+
+integration of HashGraph ensures secure and efficient aggregation of model
+updates, even in adversarial environments, paving the way for a more robust
+and trustworthy federated learning paradigm.
+
+Materials and Methods
+89 90
+
+In this section, we first introduce the dataset used in this paper, and then
+90
+
+describe the details of the base CNN classifier that is trained on each node.
+1
+
+92
+
+91
+
+91
+
+92
+
+91
+
+Afterwards, The main novelty of the presented work named HashLearner is
+described in detail.
+
+Dataset Description
+93
+
+93
+
+Similar to FedHealth, we use a dataset on Kaggle \cite{refre18} referred to as
+1
+
+"human activity recognition with smartphones". For this dataset preparation, a
+1
+
+study was conducted involving 30 participants aged 19 to 48. The subjects
+engaged in six different activities: walking on level ground, ascending stairs,
+1
+
+descending stairs, sitting, standing, and lying down. Throughout these
+activities, they wore a Samsung Galaxy S II smartphone secured at their waist.
+1
+
+The device's built-in accelerometer and gyroscope collected data on 3-axial
+1
+
+linear acceleration and 3-axial angular velocity at a steady 50Hz frequency. To
+1
+
+ensure accurate data labeling, all sessions were recorded on video. The
+94
+
+94
+
+94
+
+resulting dataset was then randomly split, with 70\% allocated for training
+94
+
+94
+
+94
+
+1
+
+purposes and the remaining 30\% reserved for testing. Data from the
+95
+
+1
+
+smartphone sensors underwent initial processing to reduce noise. The signals
+were then divided into fixed-width sliding windows of 2.56 seconds, with a
+50\% overlap between consecutive windows (resulting in 128 readings per
+1
+
+96
+
+window). A Butterworth low-pass filter was employed to separate the
+96
+
+1
+
+acceleration signal into its body motion and gravitational components. Given
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 17 of 60
+
+Report: grammarly_764230
+
+that gravitational force is primarily associated with low-frequency signals, a
+97
+
+1
+
+filter with a 0.3 Hz cutoff was applied. For each window, a set of features was
+98
+
+1
+
+extracted by computing various time and frequency domain variables. For a fair
+99
+
+comparison with FedHealth, we similarly extracted 5 topics from the mentioned
+100
+
+101
+
+101
+
+dataset (i.e. subject IDs 26 to 30) and assumed them as the isolated customers
+101
+
+100
+
+101
+
+(corporations or nodes) which cannot share records due to privacy security.
+1
+
+1,102
+
+Each node has about 400 training samples. Also it is worth mentioning that the
+102
+
+102
+
+dataset we used is a raw non-preprocessed dataset which is harder to train
+102
+
+and
+
+103
+
+103
+
+it shows the power of the proposed approach and is a harder task in
+103
+
+102
+
+103
+
+comparison to visual datasets like some image processing prepared datasets.
+
+The proposed method
+104
+
+104,105
+
+As mentioned in Introduction, the main purpose of this study is proposing a
+105
+
+105
+
+novel approach for removing the cloud server in FedHealth to increase security
+105
+
+1
+
+without loss of performance. For fair comparisons with FedHealth, we should
+107
+
+106
+
+use a shallow CNN classifier just like the FedHealth for each node to classify
+107
+
+107
+
+1
+
+six categories for human activity recognition. However, the main contribution of
+108
+
+109
+
+108
+
+1
+
+this paper named HashLearner is described in section 4-2-2. HashLearner
+110
+
+completely removes the cloud server in FedHealth in a decentralized manner to
+110
+
+1
+
+avoid attacks on the server. The details of the aforementioned methods are
+1
+
+explained in the following subsections. The rest of this section of the paper
+111
+
+111
+
+111
+
+presents the required details needed for the implementation of the
+1
+
+HashLearner platform. Since this paper is based on an industrial software
+112
+
+project the source code of this work is also available at \cite{refre12}.
+
+The Base CNN classifier
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 18 of 60
+
+Report: grammarly_764230
+
+The deep learning model used in this paper is a Convolutional Neural Network
+113
+
+114
+
+114
+
+(CNN) which is a good option for extracting local data relations between data
+114
+
+114
+
+1
+
+parts in the input of the neural network. For fair comparisons, we adopted the
+1
+
+same CNN classifier in FedHealth as shown in Figure 4. This architecture
+1
+
+comprises convolution, pooling, and fully connected (dense) layers. So, the
+116
+
+115
+
+116
+
+116
+
+115
+
+116
+
+system after the training of the model freezes the convolution and pooling
+layers and transfers the features of the local dataset to the global model more
+effectively by using transfer learning and training the fully connected layers
+116
+
+1
+
+placed at the end of the deep learning model. Hyperparameters of the base
+CNN classifier are summarized in Table 1.
+
+HashLearner
+The proposed approach in this research is named HashLearner which employs
+117
+
+HashGraph and secure decentralized random voting to create a secure and
+consistent way to share local models and aggregated model in multi-step
+aggregation (the number of steps depends on the number of nodes as the main
+purpose of the multi-step aggregation is to distribute the computation cost as
+118
+
+1
+
+a tradeoff with security of the aggregation process). The training phase of the
+1
+
+proposed HashLearner algorithm follows the steps in Figure 5. Now, each step
+in this diagram is described in detail.
+(1) Generate an initial model with random weights on each node separately as
+an initial global model.
+
+(2) Each node submits its global model to HashGraph in a decentralized
+1
+
+manner. Using HashGraph in this step helps the network to prevent adversary
+nodes from corrupting the sharing process.
+
+119
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+119
+
+119
+
+Page 19 of 60
+
+Report: grammarly_764230
+119
+
+119
+
+119
+
+(3) Do an election between nodes to generate a shared consistent random
+119
+
+ordered array of node ids.
+120
+
+(4) Each node merges models existing on the HashGraph by merging layers of
+121
+
+nodes based on the elected order of nodes which leads to a single unique
+121
+
+global model (containing collaboratively random generated weights) on all
+1 122
+
+122
+
+nodes. So, now all nodes have the same global model to do the training on.
+123
+
+(5) Each node trains the global model on its local dataset resulting in a local
+
+124
+
+1
+
+model. Then, it submits its local model to the HashGraph.
+
+(6) After all local models exist on the HashGraph, nodes do another election.
+1
+
+125
+
+The result of the election is another shared random ordered array of node ids.
+1
+
+The models self-shard the node list based on each node position in the
+126
+
+126
+
+127
+
+produced order (e.g. if node count is 100 we can have 4 shards of 25 grouped
+129 1
+
+nodes each shard as a subarray of the shared order.
+129
+
+1
+
+132
+
+130
+
+128
+
+0 to 24 : shard1, 25 to 49:
+131
+
+shard2, etc). After the sharding, in each shard the first 3 nodes in the shared
+132
+
+130
+
+order are considered as shard aggregators which will validate each other's work
+132
+
+1
+
+proof. Each shard aggregator picks local models of nodes in its shard and
+133,134
+
+aggregate them simultaneously (in this research's implementation, averaging is
+134
+
+133
+
+134
+
+employed for aggregation but any other aggregation can be used in the shard).
+1
+
+135
+
+135
+
+Afterwards, all aggregators of all shards submit their produced shard models to
+the HashGraph.
+
+(7) Nodes do another election to produce a shared random ordered array of
+136
+
+137
+
+node ids and specify the first 3 nodes in the array as the global aggregators.
+1
+
+138
+
+138
+
+138
+
+Global aggregators pick all shard models of all shard nodes from the
+1
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 20 of 60
+
+Report: grammarly_764230
+1
+
+HashGraph. They compare shard models of each shard simultaneously and pick
+
+1
+
+the most voted one (the most repeated model in the list of shard models of
+1
+
+each shard). Then they aggregate the elected shard models (each shard has one
+1
+
+elected shard model). They submit the aggregated global model to the
+HashGraph simultaneously.
+
+(8) All nodes pick the aggregated global models and choose the most repeated
+140
+
+141
+
+one (most voted) locally and separately as the global model.
+
+(9) Repeat steps 2 to 8 for any number of rounds for more convergence of the
+1
+
+142
+
+143
+
+model. It is notable that training on local dataset in each round applies transfer
+144
+
+145
+
+learning to the system helping the global model to adapt to distribution of
+different local datasets
+146
+
+Note: In this specific example the sharding hyper-parameters such as shard
+147
+
+size, shard aggregator count and global aggregator count are not optimized for
+148
+
+security and aggregator count in shard and global aggregation must be more
+149
+
+150
+
+151
+
+than 2 nodes but the algorithm remains the same and just changing this
+152
+
+153
+
+parameters in settings of the system will do the whole work needed for
+1
+
+156
+
+156
+
+optimization and increasing security. So, there is no need for any change in the
+154,156
+
+154
+
+software code to increase security of the algorithm and more nodes can be
+156
+
+adapted to this algorithm easily just by changing the config object containing
+155
+
+154
+
+the 3 mentioned hyper-parameters.
+157
+
+157
+
+This algorithm guarantees that all global models on all nodes are the same
+157
+
+1
+
+158
+
+158
+
+after the execution of these steps. The election of producing a shared random
+158
+
+ordered array of node ids uses the "commit & reveal scheme".
+
+159
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 21 of 60
+
+Report: grammarly_764230
+159
+
+In commit & reveal scheme:
+(1) Nodes generate a random number, then they hash their number.
+(2) They share their produced hash number.
+(3) Then they share the produced random number.
+(4) Each node validates the election by comparing the random number and its
+1
+
+160
+
+hash for each of the peers. If all hashes match their random numbers then the
+election is validated.
+161
+
+(5) Each node does XOR operation on the group of random numbers and
+1
+
+produces a random number. The election guarantees that all nodes now have
+the same number.
+162
+
+(6) Finally each node scales the produced number from a range of maximum
+number with the same bit count as the number of nodes to the number of
+162
+
+162
+
+162
+
+nodes which results in an index in range 0 to node\_count - 1.
+163
+
+(7) Now nodes consider the node with the same index in the nodes list as the
+163
+
+163
+
+elected node for this round and append its id to the shared random ordered
+163
+
+array of node ids.
+164
+
+(8) Repeat the steps 1 to 7 for node\_count times to produce a shared random
+order of nodes as the election result for different use cases in this system.
+
+As mentioned in the Dataset section, we have conducted a specific setup to
+166
+
+165
+
+166
+
+166
+
+show the ability of the proposed method in which the node count wasn't high
+165
+
+165,166
+
+1
+
+so that the shard size and aggregator count was the same. But the most
+functionality of the HashLearner network is in a high node count environment
+167
+
+168
+
+(e.g 100 nodes with 4 or 5 shards of 25 or 20 nodes in each shard) resulting in
+169
+
+170
+
+distribution of aggregation in different shards on a nodes network in which
+
+171
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 22 of 60
+
+Report: grammarly_764230
+171
+
+each node has limited resources (due to limited resources they can not
+172
+
+aggregate all local models on their devices.)
+173
+
+If we assume we have 5 nodes: Node A, Node B, Node C, Node D, Node E, each
+174
+
+174
+
+with a subject as local dataset, after the shard election they were mapped to
+1
+
+176
+
+175
+
+indices 0 to 4 as Node 0, …, 4. Table 2 shows how the sharding and aggregator
+176
+
+choosing happened.
+177
+
+It is worth mentioning that GAN-based attacks aimed at reconstructing models
+can be prevented by shuffling peer layers of models between nodes in a peer177
+
+1
+
+178
+
+to-peer manner, one by one. After sharding is completed, each node randomly
+178
+
+selects another node and exchanges a specific layer of its model with them.
+1,179
+
+This ensures that while the models are shuffled, the aggregation result remains
+1
+
+unchanged, and the model's integrity is preserved. Additionally, poisoning the
+model via GAN-based attacks is ineffective because aggregation is validated
+through consensus—the process is replaced, and the final result is determined
+by majority vote.
+
+Results and Discussions
+180
+
+We used a well-known classification performance measure called accuracy for
+180
+
+comparing the FedHealth and HashLearner. Accuracy is the percentage of
+correct predictions made by a machine learning model out of the total number
+of predictions.
+In this experiment, we have run the FedHealth and HashLearner methods 20
+1
+
+times, separately. The accuracy of the final global model for FedHealth and
+1
+
+HashLearner is 92.26\% ± 0.98 and 93.57 ± 0.51, respectively. It is notable that
+181
+
+182
+
+182
+
+182
+
+accuracy of HashLearner almost remained the same in spite of removing the
+181
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+181 182
+
+Page 23 of 60
+
+Report: grammarly_764230
+181
+
+181,182
+
+FedHealth cloud server and the small changes in the numbers is due to some
+182
+
+181,182
+
+randomness of calculations and model generations and means the
+182
+
+182
+
+performance of models remained the same (not improved and not corrupted).
+1
+
+183
+
+183,184
+
+The accuracy, precision, recall and f1-score of each 5 subject nodes are shown
+1
+
+186
+
+186
+
+in Table 4. As shown in the table, the mean accuracies of all subjects are so
+185
+
+186
+
+186
+
+close which demonstrates the convergence of the global model on each node.
+18
+
+In addition to the above experiment, we statistically analyzed the difference of
+1
+
+competing methods using a paired t-test. For using the paired t-test, there is a
+188
+
+188
+
+188
+
+precondition that both random variables should follow the normal distribution.
+1
+
+189
+
+190
+
+189
+
+Therefore, we need an additional statistical test named Anderson-Darling test
+189,190
+
+for the null hypothesis that the accuracies obtained for FedHealth and
+1
+
+191
+
+HashLearner are from normal distributions. After applying Anderson-Darling
+191,192
+
+191
+
+191
+
+191,192
+
+test, the null hypothesis did not reject with alpha level
+
+191
+
+1
+
+5\%. Therefore, the
+1
+
+193
+
+precondition for applying the paired t-test is satisfied. The null hypothesis for
+194
+
+paired t-test is that the accuracy of HashLearner and FedHealth comes from
+independent random samples from normal distributions with equal means and
+1
+
+equal but unknown variances. After applying this test, the null hypothesis is
+195,196
+
+rejected with alpha level
+
+195
+
+195
+
+195
+
+195,196
+
+5% and p-value 5.6e-6 means that the accuracy
+
+of our proposed HashLearner is statistically better than FedHealth.
+
+Performance Analysis of the Proposed Method
+197
+
+The experiments in our study are based on a Google Colab virtual machine
+197
+
+197
+
+1
+
+using a T4 GPU with 12 GB RAM. It is provable that the convergence speed of
+the proposed approach in this paper is the same as that of typical federated
+learning methods (e.g., FedHealth) because the only modification from basic
+1
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 24 of 60
+
+Report: grammarly_764230
+1
+
+federated learning is the shuffling process. This shuffling does not alter the
+median (or average) aggregation result, as the same layers are exchanged peer1
+
+to-peer between nodes. Sharding merely distributes the computational process
+1
+
+across nodes without affecting the final result. Mathematically, the median of
+10 numbers can be calculated either directly or by splitting them into two
+shards of 5 numbers each, first computing the median of each shard and then
+1
+
+taking the median of those two results. The outcome remains identical.
+
+Furthermore, the HashGraph consensus and voting mechanism does not
+1
+
+modify the calculation itself; it only secures the process. Thus, there is no
+difference between traditional federated learning aggregation and
+1
+
+HashLearner's aggregation in terms of results. However, HashLearner
+eliminates the need for a central server (third-party moderation), making it
+more secure and suitable for decentralized training across multiple
+organizations or communities without relying on a central authority.
+198
+
+199
+
+At each round of training an approximate time of 3~4 seconds had been added
+199
+
+198
+
+199
+
+as the election, gossiping and multi-step aggregation phase in a simulated
+local environment.
+200
+
+Although in a practical environment model serialization can be a bottleneck for
+the node communications and the transfer of models between nodes, multiple
+201
+
+solutions can be employed to solve this problem such as:
+Parallelized serialization (as the target object is a list of matrices).
+Parallelized model network transfer using multiple connections and channels
+202
+
+204
+
+204
+
+These 2 approaches can lead to lower model transfer time over the network and
+203,204
+
+a faster HashGraph model submit
+
+1
+
+206
+
+205
+
+206
+
+. It is worth mentioning that time taken
+206
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+206
+
+Page 25 of 60
+
+Report: grammarly_764230
+206
+
+206
+
+to finalize blocks in a HashGraph will increase logarithmically relative to the
+1
+
+number of nodes participating in the learning process. Using sharding will
+207
+
+207
+
+207
+
+20
+
+increase both the consensus speed and the aggregation speed as it decreases
+207
+
+the number of nodes participating in the consensus and also the number of
+1
+
+212
+
+208,209,212
+
+models being aggregated. It is worth mentioning that decreasing the number of
+212
+
+118
+
+210
+
+nodes in the consensus will do a trade-off between speed and security which
+212
+
+1
+
+211,212
+
+means that it will decrease security to increase speed. Larger shards are
+214
+
+213
+
+slower to finalize block and aggregate models but are more secure as more
+213
+
+nodes participate in consensus and more validators can be chosen for
+214
+
+214
+
+aggregating the models in the shard.
+215
+
+Scalability and throughput: Due to Swirlds HashGraph paper proofs, the
+215,216
+
+HashGraph consensus has higher throughput than other multi party
+1,217
+
+218
+
+218
+
+computation or Blockchain alternatives. Also HashGraph makes peers able to
+217
+
+218
+
+1,219
+
+submit blocks concurrently which increases scalability efficiently. Also the
+220
+
+sharding algorithm proposed by our paper distributes load and computation
+219,220
+
+bottlenecks and improve scalability compared to other papers mentioned in
+related work.
+HashLearner has higher throughput than FeDis \cite{refre19} and DFL
+221
+
+43
+
+\cite{refre20} because instead of Blockchain, it relies on hashgraph with
+221
+
+asynchronous gossiping and block finalization and uses sharding to distribute
+222
+
+222 1
+
+223
+
+224
+
+computation load across the network at the same time. In ideal situation
+HashLearner can average models in less than 10 seconds for a single round
+225
+
+226,227
+
+228
+
+averaging (inside shard or globally) and in real word situation due to network
+229
+
+latency, this process can be degraded but it is worth mentioning that this
+230
+
+231
+
+2
+
+degradation is being applied to all approaches including Blockchains and there
+1,233
+
+is always a gap between ideal and real statistics. Also HashLearner
+
+234
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 26 of 60
+
+Report: grammarly_764230
+234
+
+outperforms MPCFL \cite{refre21} in throughput and also provides higher
+233
+
+security as it uses a distributed ledger and higher level of verification.
+235
+
+Security and Privacy Analysis of the Proposed method
+236
+
+Federated learning is designed to enable collaborative model training across
+1
+
+distributed nodes without sharing raw data. However, the involvement of an
+honest but curious cloud server, a server that follows the protocol correctly but
+may attempt to infer sensitive information from the shared data, introduces
+1
+
+237
+
+significant security risks. As mentioned earlier the work presented in
+\cite{refre03} is vulnerable to three critical attack vectors: GAN attacks,
+1
+
+238,239
+
+reconstruction attacks, and poisoning attacks. HashLearner Uses a
+239
+
+decentralized consensus mechanism (HashGraph) to ensure secure and
+239
+
+transparent model aggregation and reduces the risk of single-point failures and
+1
+
+attacks targeting a central authority. In this part of this paper, a formal security
+240
+
+analysis of HashLearner platform is drawn:
+241
+
+In this part of the paper we formalize the security guarantees of the proposed
+1
+
+method under standard cryptographic frameworks. We consider a
+decentralized federated learning system consisting of a set of nodes
+$\mathcal{N} = \{P_1, P_2, \dots, P_n\}$, where each node $P_i$ holds a
+private dataset $D_i$. The goal is to collaboratively train a global model $M$
+1
+
+without exposing raw data. Each training round proceeds as follows:
+Each node trains a local model $M_i$ on $D_i$.
+Updates are obfuscated using \textit{peer-to-peer shuffling}.
+Nodes broadcast updates through the HashGraph gossip-about-gossip
+protocol.
+HashGraph consensus determines the final ordering of events.
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 27 of 60
+
+Report: grammarly_764230
+
+Aggregation produces the updated global model.
+
+We assume a probabilistic polynomial time (PPT) adversary $\mathcal{A}$
+controlling up to $t < n/3$ nodes, consistent with the fault tolerance of
+1
+
+HashGraph consensus. The adversary may attempt:
+Reconstruction attacks: Inferring private data from shared updates (e.g.,
+gradient inversion, GAN-based attacks).
+Poisoning backdoor attacks: Injecting manipulated updates to degrade
+accuracy or embed targeted misclassifications.
+Message manipulation: Delaying, reordering, or dropping messages to bias
+consensus.
+Honest-but-curious behavior: Following the protocol while attempting to
+extract information from others' updates.
+
+The adversary is computationally bounded, and communication channels are
+authenticated but not confidential. We define the ideal functionality
+1
+
+$\mathcal{F}_{HL}$ for HashLearner:
+Inputs: Each party $P_i$ provides its local update $M_i$.
+Process:
+$\mathcal{F}_{HL}$ applies randomized shuffling to anonymize updates.
+An incorruptible consensus oracle determines the order of updates.
+Secure aggregation produces the global model $M$.
+Outputs: The global model $M$ is delivered to all parties.
+
+In the ideal world, adversaries see only their own inputs and the final global
+1
+
+model. But real-world execution of HashLearner:
+Shuffling is implemented through peer-to-peer exchanges.
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 28 of 60
+
+Report: grammarly_764230
+
+Consensus is achieved via HashGraph's gossip-about-gossip with virtual
+voting.
+Updates are broadcast and aggregated in the agreed-upon order.
+
+Here, adversaries may observe update flows and corrupted nodes'
+242
+
+contributions.
+
+Security Argument Based on Ideal--Real Simulation
+243
+
+Assuming authenticated channels and the Byzantine resilience of HashGraph
+consensus, HashLearner securely realizes $\mathcal{F}_{HL}$ against any PPT
+1,244
+
+adversary controlling fewer than $n/3$ nodes. This is true since:
+Consensus integrity: HashGraph achieves asynchronous Byzantine fault
+tolerance; thus, adversaries cannot bias the ordering of honest updates except
+with negligible probability.
+Confidentiality of updates and reconstruction attacks: Randomized shuffling
+246
+
+245
+
+ensures adversaries cannot link specific updates to honest nodes and infer
+private data except with negligible probability.
+Simulatability: Any adversary's view in the real world (messages, corrupted
+updates, final model) can be simulated in the ideal world using only the global
+1
+
+model and corrupted inputs. Hence, the distributions are indistinguishable.
+Poisoning resistance: Because aggregation requires consensus, adversarial
+1,247
+
+influence is bounded, preventing domination of the global model. also it
+ensures that no single node can manipulate the aggregation result.
+2
+
+Resource-efficiency balanced with security: Nodes with limited resources such
+248
+
+as IoT nodes can easily participate without overburdening a central server, as
+the aggregation workload is securely shared.
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 29 of 60
+
+Report: grammarly_764230
+
+Peer-to-peer communication: Reduced latency and improved scalability
+249
+
+249
+
+249
+
+compared to centralized systems and removed central server leading to
+249
+
+249
+
+elimination of central communication and data transfer proxy that could be
+insecure and vulnerable to data manipulation.
+Transparent and auditable: HashGraph's consensus mechanism ensures that
+250
+
+250
+
+all transactions such as model updates are recorded and verifiable, reducing
+250
+
+the risk of malicious behavior of nodes and HashLearner can easily act as
+250
+
+intrusion detection system IDS confronting malicious nodes in poisoning
+attacks.
+Mitigates GAN attacks: By distributing the aggregation process and obfuscating
+local updates, HashLearner reduces the risk of data leakage.
+HashGraph consensus security: HashGraph is fault-tolerant against up to 33\%
+adversarial nodes, as it is an \textit{asynchronous Byzantine Fault-Tolerant
+1
+
+(aBFT)} protocol—the highest security level for asynchronous consensus. This
+security comes with the added benefit of high throughput, enabling HashGraph
+to finalize multiple blocks simultaneously while outperforming synchronous
+blockchains in speed.
+
+Therefore, HashLearner is secure in the ideal--real paradigm.
+
+Privacy Leakage Analysis}
+Although complete privacy cannot be guaranteed in gradient-based learning,
+251
+
+251
+
+we analyze the reduction in leakage using empirical evaluation.
+252,253
+
+252,253
+
+Baseline FL (FedAvg): it is vulnerable to membership inference attack and has
+1,254,255
+
+the lowest privacy in this comparison. its core principle is that clients send only
+1
+
+their model updates, not their raw data, to a central server. However, these
+updates, which are essentially averaged gradients, contain information about
+1
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 30 of 60
+
+Report: grammarly_764230
+1
+
+the data used to calculate them. Attackers can exploit this by using various
+techniques to reverse-engineer the updates and infer private information
+\cite{refre22}.
+256
+
+Blockchain-based FL: The use of immutable ledgers enhances high level of
+256
+
+privacy defense but because no native obfuscation is applied, model weights
+1
+
+recorded on the ledger remain exposed to potential inference attacks. In other
+words, in many blockchain-based FL designs, the encrypted or unencrypted
+1
+
+model updates (gradients) are stored on a public ledger. Even if a third party
+1
+
+cannot manipulate the data, they can access it. An adversary can analyze these
+publicly available gradient updates over time to perform attacks such as
+257
+
+257
+
+gradient inversion attacks or membership inference attacks, similar to those in
+1,258
+
+traditional FedAvg. Also a blockchain-based system cannot inherently prevent
+1
+
+participants from colluding. If a malicious client colludes with a miner node on
+43
+
+1
+
+the blockchain, they can still leak sensitive information. For example, a group of
+clients can aggregate their gradients and share them with an outside party, or a
+malicious client can submit malicious updates to reconstruct another client's
+data \cite{refre23}.
+259
+
+HashLearner: The privacy of shuffling system is close to random guessing, due
+259
+
+to peer to peer shuffling of the model weights and consensus-driven
+1
+
+aggregation. This shuffling process hides the identity of individual local
+1
+
+models. Even though the weights are shuffled, the final result is the same as if
+they had not been, because a non-weighted average is used to combine the
+260
+
+1,261
+
+262
+
+models, which does not affect the final outcome. This is because only the peer
+262
+
+layers (e.g., the third layer of one model with the third layer of another) are
+262
+
+1
+
+shuffled with each other. The shuffling makes it impossible for someone to link
+1
+
+263
+
+specific data to a particular model. It is worth mentioning that a higher number
+263
+
+263
+
+of nodes and a higher number of layers in a deep learning model increase
+263
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 31 of 60
+
+Report: grammarly_764230
+263
+
+shuffling security and make it harder for an adversary to identify the real
+1
+
+models and infer data. Privacy is inherently preserved by the decentralized
+265
+
+265
+
+nature of HashGraph and the multi-step aggregation process based on a
+264,265
+
+probabilistic process,
+
+264
+
+264,265
+
+No reliance on a trusted third party is
+
+hence
+
+265
+
+achieved.
+
+Thus, HashLearner significantly reduces the adversary's advantage while
+1
+
+maintaining model utility. This framework offers significant advantages over
+traditional cloud-based FL systems in terms of security, privacy, scalability,
+266
+
+1,267
+
+268
+
+higher throughput, transparency and validation. Also it eliminates risks
+1
+
+269,27
+
+associated with a single point of failure and adversarial behavior. this points
+269
+
+and properties makes HashLearner a highly secure and scalable solution for
+1
+
+federated learning. In contrast, cloud-based federated learning systems remain
+vulnerable to attacks targeting the central server and require additional
+1
+
+privacy-preserving measures to mitigate risks. HashLearner's decentralized
+approach represents a paradigm shift in federated learning, addressing the
+limitations of traditional systems and paving the way for more secure and
+privacy-preserving collaborative learning frameworks.
+
+Conclusion
+In this work, we introduced HashLearner, a secure and decentralized federated
+learning framework that eliminates the reliance on a central server by
+1
+
+leveraging the HashGraph consensus protocol. The framework integrates three
+key components: (i) decentralized aggregation via Byzantine fault-tolerant
+consensus, (ii) a peer-to-peer shuffling mechanism that obfuscates local model
+updates and mitigates reconstruction attacks, and (iii) a transfer learning–
+based personalization method to adapt the aggregated global model to
+1
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 32 of 60
+
+Report: grammarly_764230
+1
+
+heterogeneous client datasets. Our evaluation demonstrates that HashLearner
+maintains accuracy comparable to conventional FL while significantly
+improving robustness against poisoning and inference attacks, reducing
+1
+
+privacy leakage, and scaling efficiently in distributed environments. These
+271
+
+findings indicate that HashLearner provides a practical pathway toward
+271
+
+trustworthy and scalable federated learning in adversarial and resourceconstrained settings.
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 33 of 60
+
+Report: grammarly_764230
+
+1.
+
+. To; . HashLearner; . The; . These; . Some; . By;
+. They; . Despite; . This; . A; . GAN; . Section; .
+Finally; . Gossip; . In; . After; . Hence; .
+Poisoning; . One; . As; . Reconstruction; . On; .
+Multiple; . Blockchain-based; . However; .
+HashGraph; . Unlike; . Its; . Moreover; .
+Generally; . It;…
+
+Text inconsistencies
+
+Correctness
+
+2.
+
+, and
+
+Comma misuse within
+clauses
+
+Correctness
+
+3.
+
+demonstrate → indicate
+
+Word choice
+
+Engagement
+
+4.
+
+The deep learning community increasingly
+seeks decentralized solutions that allow
+organizations to jointly train models and
+carry out computations while operating in
+untrusted environments.
+
+Paragraph can be
+improved
+
+Clarity
+
+5.
+
+, including
+
+Incorrect punctuation
+
+Correctness
+
+6.
+
+The increasing demand for privacypreserving machine learning has advanced
+the rise of FL, where multiple organizations
+collaboratively train a shared model without
+exchanging raw data.
+
+Paragraph can be
+improved
+
+Clarity
+
+7.
+
+They try to distribute the training phase
+through a decentralized network of nodes
+which is multi-organizational which means
+each node can have a different owner than
+other nodes.
+
+Ungrammatical sentence
+
+Correctness
+
+8.
+
+They try to distribute the training phase
+through a decentralized network of nodes
+which is multi-organizational which means
+each node can have a different owner than
+other nodes.
+
+Paragraph can be
+improved
+
+Clarity
+
+9.
+
+By decentralizing the training process, FL
+addresses critical privacy concerns and
+reduces the risks associated with data
+centralization.
+
+Paragraph can be
+improved
+
+Clarity
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 34 of 60
+
+Report: grammarly_764230
+
+10.
+
+. In contrast, blockchain-based
+
+Hard-to-read text
+
+Clarity
+
+11.
+
+This paper proposes a Secure Decentralized
+Learning Framework Based on HashGraph
+called HashLearner, which eliminates the
+dependency on a central server and
+leverages the unique properties of
+HashGraph, a distributed ledger technology
+known for its high throughput, fairness, and
+Byzantine fault tol…
+
+Paragraph can be
+improved
+
+Clarity
+
+12.
+
+The decentralized nature of HashGraph not
+only enhances the resilience of the system
+but also mitigates the risks associated with
+centralized control, such as data
+manipulation and unauthorized access.
+
+Paragraph can be
+improved
+
+Clarity
+
+13.
+
+By removing the central server and
+leveraging HashGraph's decentralized
+architecture, the proposed approach paves
+the way for more secure and privacypreserving machine learning in distributed
+environments.
+
+Paragraph can be
+improved
+
+Clarity
+
+14.
+
+, and
+
+Comma misuse within
+clauses
+
+Correctness
+
+15.
+
+The rest of the paper is structured as
+follows: In Section 2, related work in this
+area is reviewed.
+
+Paragraph can be
+improved
+
+Clarity
+
+16.
+
+, and
+
+Incorrect punctuation
+
+Correctness
+
+17.
+
+the Decentralized
+
+Determiner use
+(a/an/the/this, etc.)
+
+Correctness
+
+18.
+
+In gossip learning, each node trains its local
+model using its local dataset the same as FL
+but the point is that there is no global initial
+model and each node initializes the global
+model's initial weights independently.
+
+Ungrammatical sentence
+
+Correctness
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 35 of 60
+
+Report: grammarly_764230
+
+19.
+
+In gossip learning, each node trains its local
+model using its local dataset the same as FL
+but the point is that there is no global initial
+model and each node initializes the global
+model's initial weights independently.
+
+Paragraph can be
+improved
+
+Clarity
+
+20.
+
+After training local models, each node tries
+to exchange its model's weights with some
+other nodes in multiple rounds and at each
+round it merges its model with the other
+node's model.
+
+Ungrammatical sentence
+
+Correctness
+
+21.
+
+After some rounds step by step the models
+can be converged more to some same
+distribution across multiple nodes.
+
+Ungrammatical sentence
+
+Correctness
+
+22.
+
+After some rounds step by step the models
+can be converged more to some same
+distribution across multiple nodes.
+
+Paragraph can be
+improved
+
+Clarity
+
+23.
+
+Hence,
+
+Incorrect punctuation
+
+Correctness
+
+24.
+
+Hence GL might not be a good target in
+heterogeneous networks with varying
+computational resources and
+communication delays because of the lack
+of a structured coordination mechanism and
+inconsistencies in model convergence
+\cite{refre11}.
+
+Paragraph can be
+improved
+
+Clarity
+
+25.
+
+In FL the target is to train a high quality
+centralized shared model, while training
+data is disbursed in a large number of each
+customer with an untrustable and relatively
+slow network connection under the
+coordination of a central server.
+
+Ungrammatical sentence
+
+Correctness
+
+26.
+
+In FL the target is to train a high quality
+centralized shared model, while training
+data is disbursed in a large number of each
+customer with an untrustable and relatively
+slow network connection under the
+coordination of a central server.
+
+Paragraph can be
+improved
+
+Clarity
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 36 of 60
+
+Report: grammarly_764230
+
+27.
+
+a reconstruction
+
+Determiner use
+(a/an/the/this, etc.)
+
+Correctness
+
+28.
+
+be used for → target
+
+Paragraph can be
+improved
+
+Clarity
+
+29.
+
+One of them is to corrupt the model by
+inserting wrong and corrupted data with a
+wrong data distribution into the dataset
+which is called passive attack and the other
+one is for hiding a backdoor inside the
+trained model by employing specific labels
+or data features in the dataset which is
+called a…
+
+Ungrammatical sentence
+
+Correctness
+
+30.
+
+One of them is to corrupt the model by
+inserting wrong and corrupted data with a
+wrong data distribution into the dataset
+which is called passive attack and the other
+one is for hiding a backdoor inside the
+trained model by employing specific labels
+or data features in the dataset which is
+called a…
+
+Paragraph can be
+improved
+
+Clarity
+
+31.
+
+, such
+
+Incorrect punctuation
+
+Correctness
+
+32.
+
+In the reconstruction attack, the adversary
+tries to reconstruct a shadow model based
+on the target model weights or gradients to
+find out some info about the data in the
+dataset in different ways such as dataset
+distribution, existence of specific data
+pieces in the dataset, or some properties of
+…
+
+Paragraph can be
+improved
+
+Clarity
+
+33.
+
+As an example, the adversary can gain the
+ability to learn if an image is in the dataset,
+or know the number of people with some
+specific properties in the dataset.
+
+Paragraph can be
+improved
+
+Clarity
+
+34.
+
+On the other hand, the discriminator tries to
+find out the fake samples produced by the
+generator.
+
+Paragraph can be
+improved
+
+Clarity
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 37 of 60
+
+Report: grammarly_764230
+
+35.
+
+which are → that are
+
+Pronoun use
+
+Correctness
+
+36.
+
+The competition between these two parts
+leads to learning more features and
+advancement of the generator to produce
+fake samples which are so similar to real
+samples.
+
+Paragraph can be
+improved
+
+Clarity
+
+37.
+
+produce → make, create
+
+Word choice
+
+Engagement
+
+38.
+
+, as
+
+Incorrect punctuation
+
+Correctness
+
+39.
+
+In the reconstruction attack, the adversary
+can use GANs to produce a shadow model
+and find some info about the dataset of a
+node as mentioned before.
+
+Paragraph can be
+improved
+
+Clarity
+
+40.
+
+Multiple approaches as counter-attacks had
+been proposed against these attacks such
+as Encryption, Shuffling, Differential Privacy
+and in some ways inserting noise into
+dataset which were helpful to make the
+system more safe against some of the
+mentioned attacks \cite{refre05}.
+
+Ungrammatical sentence
+
+Correctness
+
+41.
+
+Multiple approaches as counter-attacks had
+been proposed against these attacks such
+as Encryption, Shuffling, Differential Privacy
+and in some ways inserting noise into
+dataset which were helpful to make the
+system more safe against some of the
+mentioned attacks \cite{refre05}.
+
+Paragraph can be
+improved
+
+Clarity
+
+42.
+
+To address these challenges, recent
+research has explored the integration of
+blockchain technology into FL, aiming to
+decentralize the aggregation process and
+enhance security.
+
+Paragraph can be
+improved
+
+Clarity
+
+43.
+
+blockchain; Blockchain
+
+Text inconsistencies
+
+Correctness
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 38 of 60
+
+Report: grammarly_764230
+
+44.
+
+HashGraph \cite{refre17} is a distributed
+ledger technology that utilizes a gossipabout-gossip protocol and virtual voting to
+achieve consensus in a highly efficient and
+secure manner.
+
+Paragraph can be
+improved
+
+Clarity
+
+45.
+
+HashGraph offers higher throughput than
+proof-of-stake blockchains and is therefore
+suitable for AI training networks in which
+multiple models are trained simultaneously.
+
+Paragraph can be
+improved
+
+Clarity
+
+46.
+
+, and HashGraph's → . Hashgraph's
+
+Hard-to-read text
+
+Clarity
+
+47.
+
+HashGraph is a decentralized network
+architecture consisting of nodes each
+holding a copy of the HashGraph data
+including its events graph.
+
+Ungrammatical sentence
+
+Correctness
+
+48.
+
+HashGraph is a decentralized network
+architecture consisting of nodes each
+holding a copy of the HashGraph data
+including its events graph.
+
+Paragraph can be
+improved
+
+Clarity
+
+49.
+
+HashGraph can be used to store data in a
+secure and decentralized manner in which it
+is hard for attackers to corrupt its stability
+and consistency including the order of
+events in the HashGraph.
+
+Ungrammatical sentence
+
+Correctness
+
+50.
+
+HashGraph can be used to store data in a
+secure and decentralized manner in which it
+is hard for attackers to corrupt its stability
+and consistency including the order of
+events in the HashGraph.
+
+Paragraph can be
+improved
+
+Clarity
+
+51.
+
+This research tries to improve decentralized
+learning approaches to aggregate a global
+model in a decentralized manner.
+
+Paragraph can be
+improved
+
+Clarity
+
+52.
+
+figure → Figure
+
+Confused words
+
+Correctness
+
+53.
+
+the transfer
+
+Determiner use
+(a/an/the/this, etc.)
+
+Correctness
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 39 of 60
+
+Report: grammarly_764230
+
+54.
+
+They employed the transfer learning to
+adapt the global aggregated model to each
+node's local dataset data distribution by
+training the global aggregated model on the
+local datasets separately on each node
+\cite{refre03}.
+
+Paragraph can be
+improved
+
+Clarity
+
+55.
+
+In federated learning frameworks, the
+aggregator plays a crucial role by collecting
+and combining training results from local
+sources to update the global model.
+
+Paragraph can be
+improved
+
+Clarity
+
+56.
+
+To address these primary challenges and
+other related issues, they implemented
+blockchain technology to finalize and share
+models through an immutable distributed
+ledger similar to HashLearner's approach
+using HashGraph.
+
+Paragraph can be
+improved
+
+Clarity
+
+57.
+
+The FeDis framework, representing an
+approach that integrates federated learning
+with a distributed ledger to address security
+and trust concerns in collaborative machine
+learning.
+
+Ungrammatical sentence
+
+Correctness
+
+58.
+
+which
+
+Paragraph can be
+improved
+
+Clarity
+
+59.
+
+The core of the framework utilizes federated
+learning to train a global model by iteratively
+aggregating local gradient models
+contributed by various participants.
+
+Paragraph can be
+improved
+
+Clarity
+
+60.
+
+FeDis enhances security and trust through
+the strategic use of a distributed ledger.
+
+Paragraph can be
+improved
+
+Clarity
+
+61.
+
+This encrypted data is then fetched by the
+server for aggregation to form the global
+model.
+
+Passive voice misuse
+
+Clarity
+
+62.
+
+This process adds a layer of traceability and
+security, which is intended to increase user
+trust in the system \cite{refre19}\\.
+
+Paragraph can be
+improved
+
+Clarity
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 40 of 60
+
+Report: grammarly_764230
+
+63.
+
+a blockchain
+
+Determiner use
+(a/an/the/this, etc.)
+
+Correctness
+
+64.
+
+A key innovation is the asynchronous block
+generation capability, allowing each node to
+create its own blocks independently.
+
+Paragraph can be
+improved
+
+Clarity
+
+65.
+
+to store
+
+Paragraph can be
+improved
+
+Clarity
+
+66.
+
+to combine local model updates into a
+global model securely
+
+Inappropriate
+colloquialisms
+
+Delivery
+
+67.
+
+The integration of blockchain and FL enables
+the development of decentralized
+architectures with fortified security,
+improved privacy preservation, and improved
+reliability that is particularly valuable in
+untrusted environments such as IoT
+networks that may contain adversarial
+nodes \cite{refre14}.
+
+Paragraph can be
+improved
+
+Clarity
+
+Tone suggestions
+
+Delivery
+
+68.
+69.
+
+vote → ballot
+
+Word choice
+
+Engagement
+
+70.
+
+Figure 2 illustrates a HashGraph consensus
+sample involving five nodes, along with the
+finalization of its events (blocks), while
+Figure 3 outlines the key components of the
+algorithms.
+
+Paragraph can be
+improved
+
+Clarity
+
+71.
+
+The gossip history is visualized as a directed
+graph, where the progression of the gossip
+protocol depends on a graph-based
+representation.
+
+Paragraph can be
+improved
+
+Clarity
+
+72.
+
+or attacker
+
+Paragraph can be
+improved
+
+Clarity
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 41 of 60
+
+Report: grammarly_764230
+
+73.
+
+To mitigate this, HashLearner introduces a
+validation step during aggregation,
+performed by multiple replicated multiorganizational nodes—similar to blockchain
+through a voting mechanism.
+
+Paragraph can be
+improved
+
+Clarity
+
+74.
+
+which means that → meaning
+
+Paragraph can be
+improved
+
+Clarity
+
+75.
+
+, especially
+
+Incorrect punctuation
+
+Correctness
+
+76.
+
+This
+
+Intricate text
+
+Clarity
+
+77.
+
+However, due to the asynchronous nature of
+HashGraph, controlling virtual voting or
+executing cheating attacks is inherently
+difficult.
+
+Paragraph can be
+improved
+
+Clarity
+
+78.
+
+to train AI models without oversight from a
+central authority collaboratively
+
+Inappropriate
+colloquialisms
+
+Delivery
+
+79.
+
+As mentioned in \cite{refre03} and
+\cite{refre0018}, FL is the technique to
+overcome the data isolation issue.
+
+Paragraph can be
+improved
+
+Clarity
+
+80.
+
+on → for
+
+Wrong or missing
+prepositions
+
+Correctness
+
+81.
+
+The reason for this is the dissimilarity in the
+data distribution of the user and the server's
+storage.
+
+Paragraph can be
+improved
+
+Clarity
+
+82.
+
+The common model is trained on the server
+that only recognizes the distribution of the
+features from all the users.
+
+Ungrammatical sentence
+
+Correctness
+
+83.
+
+The common model is trained on the server
+that only recognizes the distribution of the
+features from all the users.
+
+Paragraph can be
+improved
+
+Clarity
+
+84.
+
+recognizing → identifying, remembering
+
+Word choice
+
+Engagement
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 42 of 60
+
+Report: grammarly_764230
+
+85.
+
+while eliminating
+
+Paragraph can be
+improved
+
+Clarity
+
+86.
+
+HashLearner addresses these limitations by
+introducing a decentralized aggregation
+mechanism that preserves scalability and
+robustness while ensuring faster
+convergence and a shared global model
+without requiring a central server.
+
+Paragraph can be
+improved
+
+Clarity
+
+87.
+
+In this paper we build on these
+advancements by proposing a Secure
+Decentralized Learning Framework Based on
+HashGraph which is called HashLearner,
+which eliminates the central server in
+federated learning and leverages
+HashGraph's consensus mechanism to
+coordinate model updates.
+
+Ungrammatical sentence
+
+Correctness
+
+88.
+
+In this paper we build on these
+advancements by proposing a Secure
+Decentralized Learning Framework Based on
+HashGraph which is called HashLearner,
+which eliminates the central server in
+federated learning and leverages
+HashGraph's consensus mechanism to
+coordinate model updates.
+
+Paragraph can be
+improved
+
+Clarity
+
+89.
+
+paper,
+
+Comma misuse within
+clauses
+
+Correctness
+
+90.
+
+In this section, we first introduce the dataset
+used in this paper, and then describe the
+details of the base CNN classifier that is
+trained on each node.
+
+Paragraph can be
+improved
+
+Clarity
+
+91.
+
+Afterwards, The main novelty of the
+presented work named HashLearner is
+described in detail.
+
+Ungrammatical sentence
+
+Correctness
+
+92.
+
+Afterwards, The main novelty of the
+presented work named HashLearner is
+described in detail.
+
+Paragraph can be
+improved
+
+Clarity
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 43 of 60
+
+Report: grammarly_764230
+
+93.
+
+Similar to FedHealth, we use a dataset on
+Kaggle \cite{refre18} referred to as "human
+activity recognition with smartphones".
+
+Paragraph can be
+improved
+
+Clarity
+
+94.
+
+The resulting dataset was then randomly
+split, with 70\% allocated for training
+purposes and the remaining 30\% reserved
+for testing.
+
+Paragraph can be
+improved
+
+Clarity
+
+95.
+
+Data from the smartphone sensors
+underwent initial processing to reduce
+noise.
+
+Paragraph can be
+improved
+
+Clarity
+
+96.
+
+A Butterworth low-pass filter was employed
+to separate the acceleration signal into its
+body motion and gravitational components.
+
+Paragraph can be
+improved
+
+Clarity
+
+97.
+
+Given that gravitational force is primarily
+associated with low-frequency signals, a
+filter with a 0.3 Hz cutoff was applied.
+
+Paragraph can be
+improved
+
+Clarity
+
+98.
+
+For each window, a set of features was
+extracted by computing various time and
+frequency domain variables.
+
+Paragraph can be
+improved
+
+Clarity
+
+99.
+
+5 → five
+
+Improper formatting
+
+Correctness
+
+100.
+
+For a fair comparison with FedHealth, we
+similarly extracted 5 topics from the
+mentioned dataset (i.e. subject IDs 26 to 30)
+and assumed them as the isolated
+customers (corporations or nodes) which
+cannot share records due to privacy security.
+
+Ungrammatical sentence
+
+Correctness
+
+101.
+
+For a fair comparison with FedHealth, we
+similarly extracted 5 topics from the
+mentioned dataset (i.e. subject IDs 26 to 30)
+and assumed them as the isolated
+customers (corporations or nodes) which
+cannot share records due to privacy security.
+
+Paragraph can be
+improved
+
+Clarity
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 44 of 60
+
+Report: grammarly_764230
+
+102.
+
+Also it is worth mentioning that the dataset
+we used is a raw non-preprocessed dataset
+which is harder to train and it shows the
+power of the proposed approach and is a
+harder task in comparison to visual datasets
+like some image processing prepared
+datasets.
+
+Ungrammatical sentence
+
+Correctness
+
+103.
+
+Also it is worth mentioning that the dataset
+we used is a raw non-preprocessed dataset
+which is harder to train and it shows the
+power of the proposed approach and is a
+harder task in comparison to visual datasets
+like some image processing prepared
+datasets.
+
+Paragraph can be
+improved
+
+Clarity
+
+104.
+
+As mentioned in Introduction, the main
+purpose of this study is proposing a novel
+approach for removing the cloud server in
+FedHealth to increase security without loss
+of performance.
+
+Ungrammatical sentence
+
+Correctness
+
+105.
+
+As mentioned in Introduction, the main
+purpose of this study is proposing a novel
+approach for removing the cloud server in
+FedHealth to increase security without loss
+of performance.
+
+Paragraph can be
+improved
+
+Clarity
+
+106.
+
+one used by FedHealth
+
+Incorrect phrasing
+
+Correctness
+
+107.
+
+For fair comparisons with FedHealth, we
+should use a shallow CNN classifier just like
+the FedHealth for each node to classify six
+categories for human activity recognition.
+
+Paragraph can be
+improved
+
+Clarity
+
+108.
+
+However, the main contribution of this paper
+named HashLearner is described in section
+4-2-2.
+
+Ungrammatical sentence
+
+Correctness
+
+109.
+
+However, the main contribution of this paper
+named HashLearner is described in section
+4-2-2.
+
+Paragraph can be
+improved
+
+Clarity
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 45 of 60
+
+Report: grammarly_764230
+
+110.
+
+HashLearner completely removes the cloud
+server in FedHealth in a decentralized
+manner to avoid attacks on the server.
+
+Paragraph can be
+improved
+
+Clarity
+
+111.
+
+The rest of this section of the paper presents
+the required details needed for the
+implementation of the HashLearner
+platform.
+
+Paragraph can be
+improved
+
+Clarity
+
+112.
+
+project,
+
+Incorrect punctuation
+
+Correctness
+
+113.
+
+, which
+
+Incorrect punctuation
+
+Correctness
+
+114.
+
+The deep learning model used in this paper
+is a Convolutional Neural Network (CNN)
+which is a good option for extracting local
+data relations between data parts in the
+input of the neural network.
+
+Paragraph can be
+improved
+
+Clarity
+
+115.
+
+So, the system after the training of the
+model freezes the convolution and pooling
+layers and transfers the features of the local
+dataset to the global model more effectively
+by using transfer learning and training the
+fully connected layers placed at the end of
+the deep learning model.
+
+Ungrammatical sentence
+
+Correctness
+
+116.
+
+So, the system after the training of the
+model freezes the convolution and pooling
+layers and transfers the features of the local
+dataset to the global model more effectively
+by using transfer learning and training the
+fully connected layers placed at the end of
+the deep learning model.
+
+Paragraph can be
+improved
+
+Clarity
+
+117.
+
+secure → safe
+
+Word choice
+
+Engagement
+
+118.
+
+tradeoff; trade-off
+
+Text inconsistencies
+
+Correctness
+
+119.
+
+(3) Do an election between nodes to
+generate a shared consistent random
+ordered array of node ids.
+
+Ungrammatical sentence
+
+Correctness
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 46 of 60
+
+Report: grammarly_764230
+
+120.
+
+merging → combining, integrating
+
+Word choice
+
+Engagement
+
+121.
+
+(4) Each node merges models existing on the
+HashGraph by merging layers of nodes
+based on the elected order of nodes which
+leads to a single unique global model
+(containing collaboratively random
+generated weights) on all nodes.
+
+Ungrammatical sentence
+
+Correctness
+
+122.
+
+So, now all nodes have the same global
+model to do the training on.
+
+Paragraph can be
+improved
+
+Clarity
+
+123.
+
+, resulting
+
+Incorrect punctuation
+
+Correctness
+
+124.
+
+local → regional
+
+Word choice
+
+Engagement
+
+125.
+
+ids → IDs
+
+Confused words
+
+Correctness
+
+126.
+
+The models self-shard the node list based
+on each node position in the produced order
+(e.g. if node count is 100 we can have 4
+shards of 25 grouped nodes each shard as a
+subarray of the shared order. 0 to 24 :
+shard1, 25 to 49: shard2, etc).
+
+Ungrammatical sentence
+
+Correctness
+
+127.
+
+4 → four
+
+Improper formatting
+
+Correctness
+
+128.
+
+24 :
+
+Improper formatting
+
+Correctness
+
+129.
+
+The models self-shard the node list based
+on each node position in the produced order
+(e.g. if node count is 100 we can have 4
+shards of 25 grouped nodes each shard as a
+subarray of the shared order. 0 to 24 :
+shard1, 25 to 49: shard2, etc).
+
+Paragraph can be
+improved
+
+Clarity
+
+130.
+
+After the sharding, in each shard the first 3
+nodes in the shared order are considered as
+shard aggregators which will validate each
+other's work proof.
+
+Ungrammatical sentence
+
+Correctness
+
+131.
+
+3 → three
+
+Improper formatting
+
+Correctness
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 47 of 60
+
+Report: grammarly_764230
+
+132.
+
+After the sharding, in each shard the first 3
+nodes in the shared order are considered as
+shard aggregators which will validate each
+other's work proof.
+
+Paragraph can be
+improved
+
+Clarity
+
+133.
+
+Each shard aggregator picks local models of
+nodes in its shard and aggregate them
+simultaneously (in this research's
+implementation, averaging is employed for
+aggregation but any other aggregation can
+be used in the shard).
+
+Ungrammatical sentence
+
+Correctness
+
+134.
+
+Each shard aggregator picks local models of
+nodes in its shard and aggregate them
+simultaneously (in this research's
+implementation, averaging is employed for
+aggregation but any other aggregation can
+be used in the shard).
+
+Paragraph can be
+improved
+
+Clarity
+
+135.
+
+Afterwards, all aggregators of all shards
+submit their produced shard models to the
+HashGraph.
+
+Paragraph can be
+improved
+
+Clarity
+
+136.
+
+ids → IDs
+
+Confused words
+
+Correctness
+
+137.
+
+3 → three
+
+Improper formatting
+
+Correctness
+
+138.
+
+Global aggregators pick all shard models of
+all shard nodes from the HashGraph.
+
+Paragraph can be
+improved
+
+Clarity
+
+139.
+
+pick → choose, select
+
+Word choice
+
+Engagement
+
+140.
+
+the most
+
+Determiner use
+(a/an/the/this, etc.)
+
+Correctness
+
+141.
+
+global → worldwide
+
+Word choice
+
+Engagement
+
+142.
+
+It is notable that → Notably,
+
+Wordy sentences
+
+Clarity
+
+143.
+
+a local
+
+Determiner use
+(a/an/the/this, etc.)
+
+Correctness
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 48 of 60
+
+Report: grammarly_764230
+
+144.
+
+, helping
+
+Incorrect punctuation
+
+Correctness
+
+145.
+
+the distribution
+
+Determiner use
+(a/an/the/this, etc.)
+
+Correctness
+
+146.
+
+example,
+
+Incorrect punctuation
+
+Correctness
+
+147.
+
+, and
+
+Comma misuse within
+clauses
+
+Correctness
+
+148.
+
+, and
+
+Comma misuse within
+clauses
+
+Correctness
+
+149.
+
+2 → two
+
+Improper formatting
+
+Correctness
+
+150.
+
+, but
+
+Incorrect punctuation
+
+Correctness
+
+151.
+
+, and
+
+Incorrect punctuation
+
+Correctness
+
+152.
+
+these parameters
+
+Incorrect noun number
+
+Correctness
+
+153.
+
+the settings
+
+Determiner use
+(a/an/the/this, etc.)
+
+Correctness
+
+154.
+
+So, there is no need for any change in the
+software code to increase security of the
+algorithm and more nodes can be adapted to
+this algorithm easily just by changing the
+config object containing the 3 mentioned
+hyper-parameters.
+
+Ungrammatical sentence
+
+Correctness
+
+155.
+
+3 → three
+
+Improper formatting
+
+Correctness
+
+156.
+
+So, there is no need for any change in the
+software code to increase security of the
+algorithm and more nodes can be adapted to
+this algorithm easily just by changing the
+config object containing the 3 mentioned
+hyper-parameters.
+
+Paragraph can be
+improved
+
+Clarity
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 49 of 60
+
+Report: grammarly_764230
+
+157.
+
+This algorithm guarantees that all global
+models on all nodes are the same after the
+execution of these steps.
+
+Paragraph can be
+improved
+
+Clarity
+
+158.
+
+The election of producing a shared random
+ordered array of node ids uses the "commit
+& reveal scheme".
+
+Ungrammatical sentence
+
+Correctness
+
+159.
+
+the commit
+
+Determiner use
+(a/an/the/this, etc.)
+
+Correctness
+
+160.
+
+numbers,
+
+Incorrect punctuation
+
+Correctness
+
+161.
+
+an XOR
+
+Determiner use
+(a/an/the/this, etc.)
+
+Correctness
+
+162.
+
+(6) Finally each node scales the produced
+number from a range of maximum number
+with the same bit count as the number of
+nodes to the number of nodes which results
+in an index in range 0 to node\_count - 1.
+
+Ungrammatical sentence
+
+Correctness
+
+163.
+
+(7) Now nodes consider the node with the
+same index in the nodes list as the elected
+node for this round and append its id to the
+shared random ordered array of node ids.
+
+Ungrammatical sentence
+
+Correctness
+
+164.
+
+the steps
+
+Determiner use
+(a/an/the/this, etc.)
+
+Correctness
+
+165.
+
+As mentioned in the Dataset section, we
+have conducted a specific setup to show the
+ability of the proposed method in which the
+node count wasn't high so that the shard
+size and aggregator count was the same.
+
+Ungrammatical sentence
+
+Correctness
+
+166.
+
+As mentioned in the Dataset section, we
+have conducted a specific setup to show the
+ability of the proposed method in which the
+node count wasn't high so that the shard
+size and aggregator count was the same.
+
+Paragraph can be
+improved
+
+Clarity
+
+167.
+
+, 100
+
+Incorrect punctuation
+
+Correctness
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 50 of 60
+
+Report: grammarly_764230
+
+168.
+
+, resulting
+
+Incorrect punctuation
+
+Correctness
+
+169.
+
+nodes
+
+Incorrect noun number
+
+Correctness
+
+170.
+
+of nodes in
+
+Incorrect phrasing
+
+Correctness
+
+171.
+
+resources,
+
+Incorrect punctuation
+
+Correctness
+
+172.
+
+.) → ).
+
+Incorrect punctuation
+
+Correctness
+
+173.
+
+5 → five
+
+Improper formatting
+
+Correctness
+
+174.
+
+If we assume we have 5 nodes: Node A, Node
+B, Node C, Node D, Node E, each with a
+subject as local dataset, after the shard
+election they were mapped to indices 0 to 4
+as Node 0, …, 4.
+
+Ungrammatical sentence
+
+Correctness
+
+175.
+
+the aggregator
+
+Determiner use
+(a/an/the/this, etc.)
+
+Correctness
+
+176.
+
+Table 2 shows how the sharding and
+aggregator choosing happened.
+
+Paragraph can be
+improved
+
+Clarity
+
+177.
+
+It is worth mentioning that GAN-based
+attacks aimed at reconstructing models can
+be prevented by shuffling peer layers of
+models between nodes in a peer-to-peer
+manner, one by one.
+
+Paragraph can be
+improved
+
+Clarity
+
+178.
+
+After sharding is completed, each node
+randomly selects another node and
+exchanges a specific layer of its model with
+them.
+
+Paragraph can be
+improved
+
+Clarity
+
+179.
+
+This
+
+Intricate text
+
+Clarity
+
+180.
+
+We used a well-known classification
+performance measure called accuracy for
+comparing the FedHealth and HashLearner.
+
+Paragraph can be
+improved
+
+Clarity
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 51 of 60
+
+Report: grammarly_764230
+
+181.
+
+It is notable that accuracy of HashLearner
+almost remained the same in spite of
+removing the FedHealth cloud server and the
+small changes in the numbers is due to some
+randomness of calculations and model
+generations and means the performance of
+models remained the same (not improved
+and not corrup…
+
+Ungrammatical sentence
+
+Correctness
+
+182.
+
+It is notable that accuracy of HashLearner
+almost remained the same in spite of
+removing the FedHealth cloud server and the
+small changes in the numbers is due to some
+randomness of calculations and model
+generations and means the performance of
+models remained the same (not improved
+and not corrup…
+
+Paragraph can be
+improved
+
+Clarity
+
+183.
+
+The accuracy, precision, recall and f1-score
+of each 5 subject nodes are shown in Table
+4.
+
+Ungrammatical sentence
+
+Correctness
+
+184.
+
+5 → five
+
+Improper formatting
+
+Correctness
+
+185.
+
+, which
+
+Incorrect punctuation
+
+Correctness
+
+186.
+
+As shown in the table, the mean accuracies
+of all subjects are so close which
+demonstrates the convergence of the global
+model on each node.
+
+Paragraph can be
+improved
+
+Clarity
+
+187.
+
+of → between
+
+Wrong or missing
+prepositions
+
+Correctness
+
+188.
+
+For using the paired t-test, there is a
+precondition that both random variables
+should follow the normal distribution.
+
+Paragraph can be
+improved
+
+Clarity
+
+189.
+
+Therefore, we need an additional statistical
+test named Anderson-Darling test for the
+null hypothesis that the accuracies obtained
+for FedHealth and HashLearner are from
+normal distributions.
+
+Ungrammatical sentence
+
+Correctness
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 52 of 60
+
+Report: grammarly_764230
+
+190.
+
+Therefore, we need an additional statistical
+test named Anderson-Darling test for the
+null hypothesis that the accuracies obtained
+for FedHealth and HashLearner are from
+normal distributions.
+
+Paragraph can be
+improved
+
+Clarity
+
+191.
+
+After applying Anderson-Darling test, the
+null hypothesis did not reject with alpha
+level 5\%.
+
+Ungrammatical sentence
+
+Correctness
+
+192.
+
+After applying Anderson-Darling test, the
+null hypothesis did not reject with alpha
+level 5\%.
+
+Paragraph can be
+improved
+
+Clarity
+
+193.
+
+applying → using
+
+Word choice
+
+Engagement
+
+194.
+
+the paired
+
+Determiner use
+(a/an/the/this, etc.)
+
+Correctness
+
+195.
+
+After applying this test, the null hypothesis
+is rejected with alpha level 5% and p-value
+5.6e-6 means that the accuracy of our
+proposed HashLearner is statistically better
+than FedHealth.
+
+Ungrammatical sentence
+
+Correctness
+
+196.
+
+After applying this test, the null hypothesis
+is rejected with alpha level 5% and p-value
+5.6e-6 means that the accuracy of our
+proposed HashLearner is statistically better
+than FedHealth.
+
+Paragraph can be
+improved
+
+Clarity
+
+197.
+
+The experiments in our study are based on a
+Google Colab virtual machine using a T4 GPU
+with 12 GB RAM.
+
+Paragraph can be
+improved
+
+Clarity
+
+198.
+
+At each round of training an approximate
+time of 3~4 seconds had been added as the
+election, gossiping and multi-step
+aggregation phase in a simulated local
+environment.
+
+Ungrammatical sentence
+
+Correctness
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 53 of 60
+
+Report: grammarly_764230
+
+199.
+
+At each round of training an approximate
+time of 3~4 seconds had been added as the
+election, gossiping and multi-step
+aggregation phase in a simulated local
+environment.
+
+Paragraph can be
+improved
+
+Clarity
+
+200.
+
+, model
+
+Incorrect punctuation
+
+Correctness
+
+201.
+
+, such
+
+Incorrect punctuation
+
+Correctness
+
+202.
+
+2 → two
+
+Improper formatting
+
+Correctness
+
+203.
+
+submit → submission
+
+Incorrect phrasing
+
+Correctness
+
+204.
+
+These 2 approaches can lead to lower model
+transfer time over the network and a faster
+HashGraph model submit.
+
+Paragraph can be
+improved
+
+Clarity
+
+205.
+
+the time
+
+Determiner use
+(a/an/the/this, etc.)
+
+Correctness
+
+206.
+
+It is worth mentioning that time taken to
+finalize blocks in a HashGraph will increase
+logarithmically relative to the number of
+nodes participating in the learning process.
+
+Paragraph can be
+improved
+
+Clarity
+
+207.
+
+Using sharding will increase both the
+consensus speed and the aggregation speed
+as it decreases the number of nodes
+participating in the consensus and also the
+number of models being aggregated.
+
+Paragraph can be
+improved
+
+Clarity
+
+Tone suggestions
+
+Delivery
+
+208.
+209.
+
+decreasing → reduce, reducing
+
+Word choice
+
+Engagement
+
+210.
+
+, which
+
+Incorrect punctuation
+
+Correctness
+
+211.
+
+decrease → reduce
+
+Word choice
+
+Engagement
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 54 of 60
+
+Report: grammarly_764230
+
+212.
+
+It is worth mentioning that decreasing the
+number of nodes in the consensus will do a
+trade-off between speed and security which
+means that it will decrease security to
+increase speed.
+
+Paragraph can be
+improved
+
+Clarity
+
+213.
+
+Larger shards are slower to finalize block
+and aggregate models but are more secure
+as more nodes participate in consensus and
+more validators can be chosen for
+aggregating the models in the shard.
+
+Ungrammatical sentence
+
+Correctness
+
+214.
+
+Larger shards are slower to finalize block
+and aggregate models but are more secure
+as more nodes participate in consensus and
+more validators can be chosen for
+aggregating the models in the shard.
+
+Paragraph can be
+improved
+
+Clarity
+
+215.
+
+Scalability and throughput: Due to Swirlds
+HashGraph paper proofs, the HashGraph
+consensus has higher throughput than other
+multi party computation or Blockchain
+alternatives.
+
+Ungrammatical sentence
+
+Correctness
+
+216.
+
+Scalability and throughput: Due to Swirlds
+HashGraph paper proofs, the HashGraph
+consensus has higher throughput than other
+multi party computation or Blockchain
+alternatives.
+
+Paragraph can be
+improved
+
+Clarity
+
+217.
+
+Also HashGraph makes peers able to submit
+blocks concurrently which increases
+scalability efficiently.
+
+Ungrammatical sentence
+
+Correctness
+
+218.
+
+Also HashGraph makes peers able to submit
+blocks concurrently which increases
+scalability efficiently.
+
+Paragraph can be
+improved
+
+Clarity
+
+219.
+
+Also the sharding algorithm proposed by our
+paper distributes load and computation
+bottlenecks and improve scalability
+compared to other papers mentioned in
+related work.
+
+Ungrammatical sentence
+
+Correctness
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 55 of 60
+
+Report: grammarly_764230
+
+220.
+
+Also the sharding algorithm proposed by our
+paper distributes load and computation
+bottlenecks and improve scalability
+compared to other papers mentioned in
+related work.
+
+Paragraph can be
+improved
+
+Clarity
+
+221.
+
+HashLearner has higher throughput than
+FeDis \cite{refre19} and DFL \cite{refre20}
+because instead of Blockchain, it relies on
+hashgraph with asynchronous gossiping and
+block finalization and uses sharding to
+distribute computation load across the
+network at the same time.
+
+Ungrammatical sentence
+
+Correctness
+
+222.
+
+HashLearner has higher throughput than
+FeDis \cite{refre19} and DFL \cite{refre20}
+because instead of Blockchain, it relies on
+hashgraph with asynchronous gossiping and
+block finalization and uses sharding to
+distribute computation load across the
+network at the same time.
+
+Paragraph can be
+improved
+
+Clarity
+
+223.
+
+an ideal
+
+Determiner use
+(a/an/the/this, etc.)
+
+Correctness
+
+224.
+
+situation,
+
+Incorrect punctuation
+
+Correctness
+
+225.
+
+, and
+
+Incorrect punctuation
+
+Correctness
+
+226.
+
+real word → a word
+
+Incorrect phrasing
+
+Correctness
+
+227.
+
+word → real-world
+
+Confused words
+
+Correctness
+
+228.
+
+, due
+
+Incorrect punctuation
+
+Correctness
+
+229.
+
+, but
+
+Incorrect punctuation
+
+Correctness
+
+230.
+
+, including
+
+Incorrect punctuation
+
+Correctness
+
+231.
+
+, and
+
+Incorrect punctuation
+
+Correctness
+
+232.
+
+and there → . There
+
+Hard-to-read text
+
+Clarity
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 56 of 60
+
+Report: grammarly_764230
+
+233.
+
+Also HashLearner outperforms MPCFL
+\cite{refre21} in throughput and also
+provides higher security as it uses a
+distributed ledger and higher level of
+verification.
+
+Ungrammatical sentence
+
+Correctness
+
+234.
+
+Also HashLearner outperforms MPCFL
+\cite{refre21} in throughput and also
+provides higher security as it uses a
+distributed ledger and higher level of
+verification.
+
+Paragraph can be
+improved
+
+Clarity
+
+235.
+
+method → Method
+
+Confused words
+
+Correctness
+
+236.
+
+is designed to enable →
+enables
+
+Paragraph can be
+improved
+
+Clarity
+
+237.
+
+earlier,
+
+Incorrect punctuation
+
+Correctness
+
+238.
+
+Uses → uses
+
+Confused words
+
+Correctness
+
+239.
+
+HashLearner Uses a decentralized
+consensus mechanism (HashGraph) to
+ensure secure and transparent model
+aggregation and reduces the risk of singlepoint failures and attacks targeting a central
+authority.
+
+Paragraph can be
+improved
+
+Clarity
+
+240.
+
+the HashLearner
+
+Determiner use
+(a/an/the/this, etc.)
+
+Correctness
+
+241.
+
+paper,
+
+Comma misuse within
+clauses
+
+Correctness
+
+242.
+
+Here, adversaries may observe update flows
+and corrupted nodes' contributions.
+
+Paragraph can be
+improved
+
+Clarity
+
+243.
+
+Byzantine-resilient
+
+Paragraph can be
+improved
+
+Clarity
+
+244.
+
+This
+
+Intricate text
+
+Clarity
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 57 of 60
+
+Report: grammarly_764230
+
+245.
+
+and infer → and infer
+
+Improper formatting
+
+Correctness
+
+246.
+
+Confidentiality of updates and
+reconstruction attacks: Randomized
+shuffling ensures adversaries cannot link
+specific updates to honest nodes and infer
+private data except with negligible
+probability.
+
+Paragraph can be
+improved
+
+Clarity
+
+247.
+
+Poisoning resistance: Because aggregation
+requires consensus, adversarial influence is
+bounded, preventing domination of the
+global model. also it ensures that no single
+node can manipulate the aggregation result.
+
+Ungrammatical sentence
+
+Correctness
+
+248.
+
+Resource-efficiency balanced with security:
+Nodes with limited resources such as IoT
+nodes can easily participate without
+overburdening a central server, as the
+aggregation workload is securely shared.
+
+Ungrammatical sentence
+
+Correctness
+
+249.
+
+Peer-to-peer communication: Reduced
+latency and improved scalability compared
+to centralized systems and removed central
+server leading to elimination of central
+communication and data transfer proxy that
+could be insecure and vulnerable to data
+manipulation.
+
+Ungrammatical sentence
+
+Correctness
+
+250.
+
+Transparent and auditable: HashGraph's
+consensus mechanism ensures that all
+transactions such as model updates are
+recorded and verifiable, reducing the risk of
+malicious behavior of nodes and
+HashLearner can easily act as intrusion
+detection system IDS confronting malicious
+nodes in poisoning atta…
+
+Ungrammatical sentence
+
+Correctness
+
+251.
+
+Although complete privacy cannot be
+guaranteed in gradient-based learning, we
+analyze the reduction in leakage using
+empirical evaluation.
+
+Paragraph can be
+improved
+
+Clarity
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 58 of 60
+
+Report: grammarly_764230
+
+252.
+
+Baseline FL (FedAvg): it is vulnerable to
+membership inference attack and has the
+lowest privacy in this comparison.
+
+Ungrammatical sentence
+
+Correctness
+
+253.
+
+Baseline FL (FedAvg): it is vulnerable to
+membership inference attack and has the
+lowest privacy in this comparison.
+
+Paragraph can be
+improved
+
+Clarity
+
+254.
+
+its → Its
+
+Improper formatting
+
+Correctness
+
+255.
+
+its → Its
+
+Confused words
+
+Correctness
+
+256.
+
+Blockchain-based FL: The use of immutable
+ledgers enhances high level of privacy
+defense but because no native obfuscation
+is applied, model weights recorded on the
+ledger remain exposed to potential inference
+attacks.
+
+Ungrammatical sentence
+
+Correctness
+
+257.
+
+An adversary can analyze these publicly
+available gradient updates over time to
+perform attacks such as gradient inversion
+attacks or membership inference attacks,
+similar to those in traditional FedAvg.
+
+Paragraph can be
+improved
+
+Clarity
+
+258.
+
+Also,
+
+Comma misuse within
+clauses
+
+Correctness
+
+259.
+
+HashLearner: The privacy of shuffling system
+is close to random guessing, due to peer to
+peer shuffling of the model weights and
+consensus-driven aggregation.
+
+Ungrammatical sentence
+
+Correctness
+
+260.
+
+final
+
+Wordy sentences
+
+Clarity
+
+261.
+
+This
+
+Intricate text
+
+Clarity
+
+262.
+
+This is because only the peer layers (e.g., the
+third layer of one model with the third layer
+of another) are shuffled with each other.
+
+Paragraph can be
+improved
+
+Clarity
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 59 of 60
+
+Report: grammarly_764230
+
+263.
+
+It is worth mentioning that a higher number
+of nodes and a higher number of layers in a
+deep learning model increase shuffling
+security and make it harder for an adversary
+to identify the real models and infer data.
+
+Paragraph can be
+improved
+
+Clarity
+
+264.
+
+Privacy is inherently preserved by the
+decentralized nature of HashGraph and the
+multi-step aggregation process based on a
+probabilistic process, hence No reliance on a
+trusted third party is achieved.
+
+Ungrammatical sentence
+
+Correctness
+
+265.
+
+Privacy is inherently preserved by the
+decentralized nature of HashGraph and the
+multi-step aggregation process based on a
+probabilistic process, hence No reliance on a
+trusted third party is achieved.
+
+Paragraph can be
+improved
+
+Clarity
+
+266.
+
+, and
+
+Comma misuse within
+clauses
+
+Correctness
+
+267.
+
+Also,
+
+Comma misuse within
+clauses
+
+Correctness
+
+268.
+
+it eliminates → it eliminates
+
+Improper formatting
+
+Correctness
+
+269.
+
+this points and properties makes
+HashLearner a highly secure and scalable
+solution for federated learning.
+
+Ungrammatical sentence
+
+Correctness
+
+270.
+
+this points → This points
+
+Improper formatting
+
+Correctness
+
+271.
+
+These findings indicate that HashLearner
+provides a practical pathway toward
+trustworthy and scalable federated learning
+in adversarial and resource-constrained
+settings.
+
+Paragraph can be
+improved
+
+Clarity
+
+Report was generated on Thursday, Jan 1, 2026, 06:16 AM
+
+Page 60 of 60
+
+
